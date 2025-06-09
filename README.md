@@ -1,7 +1,9 @@
+![Logotipo da Neuropsicocentro](./348241479_190932783450911_7836823570740727480_n.jpg)
+
 # Manual do Setor de T.I. – Neuropsicocentro
 
 **Versão 1.0**  
-**Atualizado em:** 09/06/2025 
+**Atualizado em:** ________  
 **Responsável:** Glaudiston Pereira  
 
 ---
