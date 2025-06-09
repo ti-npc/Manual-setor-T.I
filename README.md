@@ -1,7 +1,7 @@
 # Manual do Setor de T.I. – Neuropsicocentro
 
 **Versão 1.0**  
-**Atualizado em:** ________  
+**Atualizado em:** 09/06/2025 
 **Responsável:** Glaudiston Pereira  
 
 ---
