@@ -141,11 +141,46 @@ Para garantir segurança e rastreabilidade no acesso a sistemas e arquivos da Ne
 
 ## 12. Plano de Continuidade e Recuperação (futuro)
 
-- Backups diários automáticos na nuvem e semanal em servidor local ou no Amazon S3
-- Roteiro de recuperação em caso de perda de dados ou falha crítica.
-- Checklist de procedimentos em caso de queda de energia ou internet.
+### 12.1 Estratégia de Backups
 
-## 13. Relatórios e Indicadores
+- **Backups diários na nuvem**:
+  - Utilizar serviços como Google Drive, OneDrive ou Amazon S3.
+  - Scripts automatizados com agendamento via `cron` (Linux) ou `Task Scheduler` (Windows).
+  - Dados críticos criptografados antes do envio (ex: `7zip` com senha ou `gpg`).
+
+- **Backups semanais locais**:
+  - Realizados em NAS ou HD externo protegido por senha.
+  - Agendamento automático aos finais de semana com verificação de integridade (checksum).
+  - Alternância de dispositivos para evitar ponto único de falha.
+
+- **Recomendações**:
+  - Testar restauração de backup trimestralmente.
+  - Manter documentação com estrutura de pastas e cronograma.
+
+### 12.2 Roteiro de Recuperação em Caso de Falhas
+
+1. **Identificar a falha** (hardware, software ou rede).
+2. **Avaliar impacto**: verificar quais setores ou sistemas foram afetados.
+3. **Isolar o problema** para evitar propagação (ex: desconectar máquina infectada).
+4. **Ativar backup mais recente**:
+   - Nuvem: restauração via painel do provedor (Google/AWS).
+   - Local: recuperação via ferramenta de backup (ex: Veeam, rsync, Timeshift).
+5. **Registrar o ocorrido** com data/hora, causa, tempo de indisponibilidade e solução.
+6. **Notificar setores impactados** com orientação de retomada.
+
+### 12.3 Checklist em Caso de Queda de Energia ou Internet
+
+- ✅ Verificar funcionamento do nobreak e autonomia restante.
+- ✅ Informar setores sobre instabilidade temporária.
+- ✅ Desligar servidores não críticos para conservar energia.
+- ✅ Garantir que equipamentos com dados estejam desligados corretamente.
+- ✅ Confirmar que os backups foram realizados no período anterior.
+- ✅ Após normalização, verificar:
+  - Conectividade de rede e internet
+  - Logs de erros ou falhas
+  - Status dos servidores e sistemas
+
+**Observação:** Considerar aquisição de nobreaks com monitoramento via rede e links de internet redundantes para unidades críticas.. Relatórios e Indicadores
 
 - Relatório mensal de chamados abertos/fechados.
 - SLA de atendimento por categoria.
