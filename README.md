@@ -4,7 +4,7 @@
 
 **Versão 1.0**  
 **Atualizado em:** 09/06/2025  
-**Responsável:** Glaudiston Pereira  
+**Responsáveis:** Glaudiston Pereira, Samuel Albuquerque  
 
 ---
 
