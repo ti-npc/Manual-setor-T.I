@@ -100,11 +100,39 @@ Suporte Técnico em TI | AWS Cloud | Redes de Computadores | Windows & Linux | H
 
 ## 10. Controle de Acesso (futuro)
 
-- Usuários são criados/desativados conforme entrada/saída de colaboradores.
-- Níveis de permissão definidos com base na função.
-- Acesso a pastas e sistemas críticos deve ser registrado e auditável.
+Para garantir segurança e rastreabilidade no acesso a sistemas e arquivos da Neuropsicocentro, é necessário implementar um controle de acesso com base nos seguintes pontos:
 
-## 11. Boas Práticas de Uso da Tecnologia
+### 10.1 Criação e Desativação de Usuários
+- **Procedimento de criação**: usuário é criado via Active Directory (local ou Azure AD) ou no servidor conforme entrada do colaborador.
+- **Solicitação formal**: cadastro feito somente após envio de formulário de solicitação pelo RH.
+- **Desativação**: feita imediatamente após desligamento do colaborador, com revogação de todos os acessos.
+
+### 10.2 Níveis de Permissão
+- **Modelo de função (RBAC - Role-Based Access Control)**:
+  - Recepção: acesso a sistemas de agendamento e impressão.
+  - Administrativo: acesso a documentos, planilhas e relatórios.
+  - T.I.: acesso a sistemas de gerenciamento e infraestrutura.
+  - Direção: acesso irrestrito, mas auditável.
+- **Gestão de permissões**: uso de grupos no Active Directory ou sistemas com controle ACL (Access Control List).
+
+### 10.3 Registro e Auditoria de Acessos
+- **Pastas compartilhadas**:
+  - Servidor com logs ativados (ex: Windows Server, Synology NAS ou Linux com auditd).
+  - Logs de leitura, gravação e exclusão armazenados por no mínimo 6 meses.
+- **Sistemas Web e Softwares**:
+  - Ativar histórico de login e ações dos usuários.
+  - Alertas por e-mail para tentativas de acesso negado ou suspeito.
+- **Ferramentas recomendadas**:
+  - PRTG ou Zabbix para monitoramento.
+  - Wazuh, Graylog ou Elastic Stack para auditoria.
+
+### 10.4 Acesso Remoto
+- Acesso remoto autorizado somente com uso de VPN (via PFSense ou Sophos).
+- Identificação por autenticação multifator (MFA) para usuários com acesso externo.
+
+### 10.5 Revisão Periódica
+- Auditoria trimestral dos usuários ativos versus lista de funcionários.
+- Revisão dos níveis de acesso a cada 6 meses, ou mediante mudanças de função.. Boas Práticas de Uso da Tecnologia
 
 - Nunca compartilhe senhas, mesmo com colegas.
 - Evite conectar dispositivos pessoais na rede corporativa.
